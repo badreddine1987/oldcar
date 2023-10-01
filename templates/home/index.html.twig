@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<main class="main__container">
+		<section class="enter__home">
+			<div class="title__page">
+				<h1 class="title_entry">Old
+					<span>Car</span>
+				</h1>
+				<h2 class="subTitle_entry">Classiques d'Hier, Passions d'Aujourd'hui</h2>
+				<a href="#" class="look-add">Acheter maintenant</a>
+			</div>
+		</section>
+		<section class="banner-area-wrapper ">
+			<div class="banner-area">
+				<div class="banner-card items-car-1 ">
+					<div class="text-over">
+						<h3 class="over-title">Peogeot old school</h3>
+						<p class="over-p">Plongez dans l'histoire avec la Peugeot Old School, une voiture qui incarne l'élégance intemporelle. Ses lignes classiques et son charme vintage vous transporteront vers une époque révolue.</p>
+					</div>
+				</div>
+				<div class="banner-card items-car-2">
+					<div class="text-over">
+						<h3 class="over-title">Pièces toutes époques.</h3>
+						<p class="over-p">Restaurez, réparez et préservez l'histoire de votre voiture avec nos pièces de qualité inégalée. Faites revivre le passé avec nos pièces détachées toutes époques.</p>
+					</div>
+				</div>
+				<div class="banner-card items-car-3">
+					<div class="text-over">
+						<h3 class="over-title">Services apres-vante</h3>
+						<p class="over-p">Chez nous, la satisfaction du client est notre priorité absolue. Nous vous garantissons une livraison rapide en seulement 72 heures.</p>
+					</div>
+				</div>
+			</div>
+			<h2 class="tac">Services de qualité</h2>
+			<div class="banner_area_call-to-action">
+				<div class="banner_area_call ">
+					<div class="first_custom">
+						<img src="{{ asset('./assets/img/pc/2.png') }}" alt="">
+					</div>
+					<div class="second_custom">
+						<h2 class="banner-call-title">Livraison gratuite</h2>
+						<p class="banner-call-text">Offre une livraison gratuite à domicile pour tous les produits d'une valeur supérieure à 100 €</p>
+					</div>
+				</div>
+				<div class="banner_area_call ">
+					<div class="first_custom ">
+						<img src="{{ asset('./assets/img/pc/3.png') }}" alt="">
+					</div>
+					<div class="second_custom">
+						<h2 class="banner-call-title">Produits de qualité</h2>
+						<p class="banner-call-text">Nous garantissons la qualité de nos produits à tout moment</p>
+					</div>
+				</div>
+				<div class="banner_area_call ">
+					<div class="first_custom">
+						<img src="{{ asset('./assets/img/pc/1.png') }}" alt="">
+					</div>
+					<div class="second_custom">
+						<h2 class="banner-call-title">Support</h2>
+						<p class="banner-call-text">Pour satisfaire nos clients, nous essayons de fournir une assistance en ligne.</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<section class="items_add_best ">
+			<div class="items_add_width">
+				<h2 class="best_title">Derniers Articles</h2>
+				<p class="best_text">Tous les produits les plus vendus sont maintenant disponibles pour vous et vous pouvez acheter ce produit à partir d'ici à tout moment et n'importe où, alors arrêtez-vous maintenant.</p>
+				<div class="best_items_cards ">
+
+					<!--=================-->
+					{% for produit in produits|reverse|slice(-4) %}
+					<div class="best_card ">
+						<div class="best-card-picture ">
+							 <img src="{{ asset('uploads/' ~ produit.image) }}" alt="{{ produit.title }}">
+						</div>
+						<h3>{{ produit.title }}</h3>
+						<div class="best-price ">
+							<p>{{ produit.price }} €</p>
+							<span class="price-span">
+								<a href="{{ path('add_item', {'id': produit.id}) }}">
+									<i class="uil uil-shopping-bag"></i>
+								</a>
+								<a href="{{ path('app_product_detail', {'id': produit.id}) }}">
+									<i class="uil uil-eye"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+					<!--=================-->			
+					{% endfor %}
+				</div>
+				<a class="vente-call-btn" href="{{ path('app_product')}}">
+					Voir plus</a>
+			</div>
+		</section>
+		<section class="present-items ">
+
+			<h3 class="present-items-title ">AutoCulte</h3>
+			<h3 class="present-items-subtitle ">Véhicules emblématiques  incarnent l'élégance</h3>
+			<img src="{{ asset('./assets/img/pc/old-mini2.png') }}" alt="">
+		</section>
+		<section class="call_section_items">
+			<h2 class="call_title_items">OFFRE SPÉCIALE</h2>
+			<h3 class="call_subtitle_items">Abonnez-vous à notre newsletter et recevez toutes les dernières nouvelles de nos produits, promotions et offres.
+				derniers produits, promotions et offres.</h3>
+			<div class="input_newsletter_area ">
+				<input placeholder="Votre adresse mail" type="email" name="" id="">
+				<a href="#">Valider</a>
+
+			</div>
+		</section>
+		<section class="partenaire_section">
+			<h2 class="call_title_items color-2">Nos partenaire</h2>
+			<div class="partner_div">
+				<img src="{{ asset('./assets/img/customer/1.png') }}" alt="">
+				<img src="{{ asset('./assets/img/customer/2.png') }}" alt="">
+				<img src="{{ asset('./assets/img/customer/3.png') }}" alt="">
+				<img src="{{ asset('./assets/img/customer/4.png') }}" alt="">
+				<img src="{{ asset('./assets/img/customer/5.png') }}" alt="">
+			</div>
+		</section>
+
+	</div>
+</main>
+{% endblock %}

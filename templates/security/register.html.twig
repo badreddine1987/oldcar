@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+
+	<main class="login_container">
+		<section class="card-auth ">
+			<h1 class="auth-title">Inscription</h1>
+				{{form_start(form, {
+					'attr': {
+                    'class': 'form-register'
+                }
+				})}}
+					{{ form_row(form.lastName) }}
+					{{ form_row(form.firstName) }}
+					{{ form_row(form.email) }}
+					{{ form_row(form.password) }}
+					<button class="btn-login" type="submit">Valider</button>
+				{{form_end(form)}}
+		</section>
+	</main>
+
+
+{% endblock %}

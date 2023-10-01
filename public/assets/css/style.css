@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@700;900&display=swap');
+/* ################# */
+@import './dash.css';
+@import './login.css';
+@import './product.css';
+@import './home.css';
+@import './nav.css';
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --main-color-1: #8b0000;
+    --main-color-2: #fff5e1;
+    --main-color-3: #2e86ab;
+    --main-color-4: #191919;
+    --main-color-5: #f18f01;
+}
+
+::selection{
+    background: var(--main-color-5);
+    color: var(--main-color-2);
+}
+
+
+.br{
+    border: 2px solid blue;
+}
+
+.color-2{
+    color: var(--main-color-4);
+}
+
+
+h1,h2{
+    font-family: 'Inter', sans-serif;
+}

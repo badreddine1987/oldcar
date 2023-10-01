@@ -1,0 +1,236 @@
+.product_head{
+    width: 100%;
+    height: 150px;
+    background: var(--main-color-1);
+    color: var(--main-color-2);
+}
+
+.product_head_item{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.product_list_section{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+/* ######### */
+
+.section_table_shop{
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+#shop__panier{
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border: none;
+}
+
+#shop__panier thead{
+    width: 100%;
+    background: var(--main-color-1);
+}
+
+#shop__panier  .th-shop:first-child {
+    width: 40%;
+}
+
+#shop__panier  .th-shop:nth-child(2),#shop__panier  .th-shop:nth-child(3),#shop__panier  .th-shop:nth-child(4) {
+    width: 20%;
+}
+
+.shop__panier thead tr{
+    background: var(--main-color-1);
+    color: var(--main-color-2);
+}
+.shop__panier thead th,
+.shop__panier tbody td{
+padding: 10px;
+text-align: center;
+}
+
+
+
+.shop__panier .uil{
+    font-size: 20px;
+}
+
+.shop__panier .uil-plus-circle{
+   color: var(--main-color-3);
+}
+
+.shop__panier .uil-minus-circle{
+    color: var(--main-color-5);
+}
+
+.section_total-commande{
+    width: 90%;
+    min-width: 300px;
+    max-width: 1200px;
+    height: 250px;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    margin: 20px auto;
+    padding: 10;
+    text-align: center;
+}
+.section_total-commande h2 span{
+   color: var(--main-color-3);
+}
+
+.btn_commande{
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background: var(--main-color-3);
+    color: var(--main-color-4);
+    text-align: center;
+    margin: 20px Auto;
+    border-radius: 20px;
+    font-weight: 700;
+}
+.btn_commande:hover{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background: var(--main-color-5);
+    color: var(--main-color-2);
+}
+
+.page_render{
+    width: 100%;
+    display: flex;
+}
+
+.page_render nav{
+    width: 100%;
+
+}
+.pagination {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.pagination li{
+    margin: 5px;
+}
+
+.page-link{
+    color: var(--main-color-3);
+}
+
+.page-link .page-item{
+    color: var(--main-color-3);
+}
+.page-item.active .page-link {
+    color: var(--main-color-4) !important;
+}
+
+.page-link .page-active{
+    color: var(--main-color-3);
+}
+
+.page-item.disabled{
+    color: var(--main-color-5);
+    
+}
+
+/* ################################# */
+.detail_title{
+    width: 100%;
+    height: 100px;
+    background: var(--main-color-1);
+}
+.detail_section{
+    width: 100%;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.picture_prod_show{
+    width: 30%;
+    min-width: 300px;
+    height: 300px;
+    background: rgba(128, 128, 128, 0.137);
+}
+.picture_prod_show img{
+    width: 100%;
+}
+.details_prod_show{
+    width: 70%;
+    min-height: 300px;
+    padding: 10px;
+}
+
+.detail_title_show{
+    color: var(--main-color-1);
+    font-size: clamp(1.2rem, 2vw,3rem);
+    margin-bottom: 20px;
+}
+
+.detail_description_show{
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+.detail_caracter_show{
+    font-size: 12px;
+    text-transform: lowercase;
+    text-transform: capitalize;
+    margin: 10px 0 40px 0;
+}
+
+
+
+.detail_price_show{
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    margin: 20px 0 40px 0;
+}
+
+.price-span_detail a{
+    padding: 10px 25px;
+    background-color: var(--main-color-1);
+    color: var(--main-color-2);
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.last-product{
+    width: 100%;
+    max-width: 1400px;
+    margin: 150px auto;
+}
+
+.last-product_title{
+    text-align: center;
+    color: var(--main-color-1);
+}
+
+@media screen and (max-width: 900px){
+    
+}
+
+@media screen and (max-width: 768px){
+    .product_head::before {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Produits
+{% endblock %}
+
+{% block body %}
+	<main class="dashboard_container">
+		<section class="product_add_section br">
+			<h1 class="dash_title_add">Ajouter un produit</h1>
+			<div class="form_card">
+				{{ form_start(form_produit, {
+                    'attr': {
+                    'class': 'form-product-control'
+                    }
+                })}}
+				{{form_row(form_produit.title)}}
+				{{form_row(form_produit.description)}}
+				{{form_row(form_produit.caracter)}}
+				{{form_row(form_produit.image)}}
+				{{form_row(form_produit.price)}}
+				{{form_row(form_produit.stock)}}
+				<button class="btn-add" type="submit">Valider</button>
+				{{ form_end(form_produit)}}
+			</div>
+		</section>
+	</main>
+{% endblock %}

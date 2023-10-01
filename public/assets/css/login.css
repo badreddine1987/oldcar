@@ -1,0 +1,59 @@
+.login_container{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background: var(--main-color-2);
+    padding: 40px 0;
+}
+
+.card-auth{
+    width: 90%;
+    max-width: 450px;
+    min-height: 150px;
+   margin: 0 auto;
+   background: var(--main-color-1);
+   color: var(--main-color-2);
+   border-radius: 20px;
+   padding: 10px 20px;
+}
+
+.auth-title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-controller{
+    display: flex;
+    flex-direction: column;
+}
+.form-controller label{
+    margin-top: 10px;
+}
+.form-controller input{
+    padding: 5px;
+}
+
+.btn-login{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px;
+    border-radius: 8px;
+    background: var(--main-color-5);
+    color: var(--main-color-4);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.form-register div{
+    display: flex;
+    flex-direction: column;
+}
+.form-register div label{
+    margin-top: 10px;
+}
+.form-register div input{
+    padding: 5px;
+}

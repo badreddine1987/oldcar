@@ -1,0 +1,35 @@
+<header class="header__container">
+
+    <nav class="nav__container ">
+        <a href="{{ path('app_home') }}">
+            <img class="logo-oldcar" src="{{ asset('./assets/logo/logo.png') }}" alt="logo">
+        </a>
+        {# ############################ #}
+            <ul class="nav_content">
+                <li class="path"><a href="{{ path('app_home') }}" class="path_link">Accueil</a></li>
+                <li class="path"><a href="{{ path('app_product')}}" class="path_link">Produits</a></li>
+                <li class="path"><a href="#" class="path_link">actualité</a></li>
+
+                <li class="path"><a href="#" class="path_link">À propos</a></li>
+               
+                {% if is_granted("ROLE_ADMIN") %}
+            <li class="link-ref"><a href="{{ path('show_produits') }}" class="ref-href">admin</a></li>
+            <li class="link-ref"><a href="{{ path('create_produit') }}" class="ref-href">Ajouter produit</a></li>
+			{% endif %}
+                {% if not app.user %}
+                <li class="path path-login"><a href="{{ path('app_login') }}" class="path_log">Connectez-vous</a></li>
+                {% else %}
+                <li class="path path-login"><a href="{{ path('app_logout') }}" class="path_log">Déconnexion</a></li>      
+                {% endif %}
+                 <li class="path path-shop"><a href="{{ path('show_panier')}}" class="path_link"><i class="uil uil-shopping-bag"></i></a></li>
+            </ul>
+        {# ############################ #}
+        <button class="menu " type="submit">
+            <span class="li li1"></span>
+            <span class="li li2"></span>
+            <span class="li li3"></span>
+        </button>
+        {# ############################ #}
+    </nav>
+
+</header>

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier
+{% endblock %}
+{% block body %}
+	<main class="main_container">
+		<section class="product_head">
+			<div class="product_head_item ">
+				<h2 class="product_head_title">Panier</h2>
+			</div>
+		</section>
+		<section class="section_table_shop">
+			<table
+				class="shop__panier br">
+				{# <caption>Selection de panier</caption> #}
+				<thead>
+					<tr>
+						<th>Produit</th>
+						<th>Prix</th>
+						<th>Quantité</th>
+						<th>Total</th>
+
+					</tr>
+				</thead>
+				<tbody>
+
+					{% set panierVide = true %}
+
+					{% for item in panier %}
+						{% if item.quantity > 0 %}
+							{% set panierVide = false %}
+							<tr>
+								<td><a href="{{ path('supprimer_produit', {'id': item.produit.getId()}) }}"><i class="uil uil-times-circle"></i></a> {{ item.produit.getTitle() }}</td>
+								<td>{{ item.produit.getPrice() }} €</td>
+								<td>
+									<a href="{{ path('add_item', {'id': item.produit.getId()}) }}"><i class="uil uil-plus-circle"></i></a>
+									{{ item.quantity }}
+									<a href="{{ path('retirer_quantite', {'id': item.produit.getId()}) }}"><i class="uil uil-minus-circle"></i></a>
+								</td>
+								<td>{{ item.produit.getPrice() * item.quantity }} €</td>
+								{# <td>
+									
+								</td> #}
+							</tr>
+						{% endif %}
+					{% endfor %}
+
+					{% if panierVide %}
+						<tr>
+							<td colspan="5">Panier vide</td>
+						</tr>
+					{% endif %}
+
+				</tbody>
+			</table>
+		</section>
+	</main>
+{% endblock %}

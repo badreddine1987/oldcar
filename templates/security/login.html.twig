@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+
+	<main class="login_container">
+		<section class="card-auth ">
+			<h1 class="auth-title">Déjà client ?</h1>
+			<form class="form-controller" method="post">
+				<label for="inputEmail">Votre adresse e-mail :</label>
+				<input placeholder="chris@mail.com" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+				<label for="inputPassword">Mot de passe :</label>
+				<input placeholder="Ab1***" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<button class="btn-login" type="submit">
+					Valider
+				</button>
+			</form>
+            <h2 class="auth-title">Nouveau client ?</h2>
+				<a href="{{ path('app_register')}}" class="btn-login" >
+					Créer mon compte
+				</a>
+		</section>
+	</main>
+
+
+{% endblock %}

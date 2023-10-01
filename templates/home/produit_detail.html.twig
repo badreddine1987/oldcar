@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ produit.title }}
+{% endblock %}
+{% block body %}
+	<main class="main_container">
+		<section class="product_head">
+			<div class="product_head_item ">
+				<h2 class="product_head_title">Details du produit</h2>
+			</div>
+		</section>
+		<section class="detail_section ">
+			<div class="picture_prod_show ">
+				<img src="{{ asset('uploads/' ~ produit.image ) }}" alt="{{ produit.title }}">
+			</div>
+			<div class="details_prod_show">
+				<h1 class="detail_title_show">{{ produit.title }}</h1>
+				<p class="detail_description_show ">{{ produit.description }}</p>
+				<p class="detail_caracter_show">Tarif : {{ produit.caracter }}
+					€</p>
+				<p class="detail_price_show">Tarif : {{ produit.price }}
+					€</p>
+				<span class="price-span_detail">
+					<a href="{{ path('add_item', {'id': produit.id}) }}">
+						<i class="uil uil-shopping-bag"></i> Ajouter au panier
+					</a>
+
+				</span>
+			</div>
+		</section>
+        <section class="last-product">
+                <h2 class="last-product_title">Derniers produits en stock</h2>
+            <div class="best_items_cards ">
+
+					<!--=================-->
+					{% for produit in produits|reverse|slice(-4) %}
+					<div class="best_card ">
+						<div class="best-card-picture ">
+							 <img src="{{ asset('uploads/' ~ produit.image) }}" alt="{{ produit.title }}">
+						</div>
+						<h3>{{ produit.title }}</h3>
+						<div class="best-price ">
+							<p>{{ produit.price }} €</p>
+							<span class="price-span">
+								<a href="{{ path('add_item', {'id': produit.id}) }}">
+									<i class="uil uil-shopping-bag"></i>
+								</a>
+								<a href="{{ path('app_product_detail', {'id': produit.id}) }}">
+									<i class="uil uil-eye"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+					<!--=================-->			
+					{% endfor %}
+				</div>
+        </section>
+	</main>
+{% endblock %}
+
+
