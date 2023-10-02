@@ -353,7 +353,7 @@
 
 .call_section_items{
     width: 100%;
-    min-height: 250px;
+    min-height: 350px;
     background: var(--main-color-1);
     padding: 20px 0;
 }
@@ -397,6 +397,7 @@
 
 .input_newsletter_area a{
     width: 30%;
+    min-width: 120px;
     height: 100%;
     background: var(--main-color-3);
     color: var(--main-color-2);
@@ -535,6 +536,33 @@
     .footer_block_content{
         min-height: 100px;
     }
+
+    .input_newsletter_area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        background: var(--main-color-1);
+    }
+    .input_newsletter_area input{
+        margin-bottom: 20px;
+        background: var(--main-color-2);
+        width: 80%;
+        padding: 10px;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 25px;
+    }
+    .input_newsletter_area input:focus {
+        outline:  none;
+    }
+    
+    .input_newsletter_area a{
+        width: 40%;
+        padding: 10px;
+    }
+
+
     
     
 }

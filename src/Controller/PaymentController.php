@@ -9,14 +9,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\Produit;
 
-#[Route('/paiement')]
+#[Route('/order')]
 class PaymentController extends AbstractController
 {
-    #[Route('/formulaire', name: 'formulaire_paiement', methods: ['GET', 'POST'])]
+    #[Route('/create-session-stripe', name: 'formulaire_paiement', methods: ['GET', 'POST'])]
     public function formulairePaiement(Request $request, SessionInterface $session): Response
     {
         // Récupérer le panier depuis la session
         $panier = $session->get('panier', []);
+        $total = 0;
+
+        foreach ($panier as $item) {
+            $totalItem = $item['produit']->getPrice() * $item['quantity'];
+            $total += $totalItem;
+        }
 
         // Votre logique de traitement du formulaire de paiement ici
 
@@ -34,7 +40,8 @@ class PaymentController extends AbstractController
         }
 
         return $this->render('panier/formulaire_paiement.html.twig', [
-            'panier' => $panier,
+            'total' => $total,
+            'panier' => $panier
         ]);
     }
 }

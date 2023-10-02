@@ -4,5 +4,72 @@
 {% endblock %}
 
 {% block body %}
+	<main class="main_container">
+		<div class="payment_head">
+			<h1>Ordre de Paiement</h1>
+		</div>
+		<section class="form_payment ">
+			<div class="form_payment_adress payment_card ">
+				<form method="POST" action="traitement.php">
+					<div class="form-group ">
+						<input type="text" id="nom" name="nom" placeholder="Nom" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="code_postal" name="code_postal" placeholder="Code Postal" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="pays" name="pays" placeholder="Pays" required>
+					</div>
+					<div class="form-group">
+						<input type="mail" id="mail" name="mail" placeholder="mail" required>
+					</div>
+					<div class="form-group">
+						<input type="tel" id="telephone" name="telephone" placeholder="Numéro de Téléphone" required>
+					</div>
+					<div
+						class="form-group"><!-- Champs de formulaire Stripe (à ajouter) -->
+					</div>
+				</form>
+			</div>
+			<div class="form_payment_card payment_card">
+				<h2 class"order_commande br">Votre commande</h2>
 
+				{% set panierVide = true %}
+				{% for item in panier %}
+					{% if item.quantity > 0 %}
+						{% set panierVide = false %}
+						<div class="order_div_product">
+							<p class="panier_order">{{ item.produit.getTitle() }}
+								<i class="uil uil-times"></i>
+								{{ item.quantity }}
+							</p>
+							<p class="panier_order_total">{{ item.produit.getPrice() * item.quantity }}
+								€</p>
+						</div>
+					{% endif %}
+				{% endfor %}
+
+				{% if panierVide %}
+
+					<p class="vide">Panier vide</p>
+
+				{% endif %}
+				<span class="hr_order"></span>
+				<div class="order_div_product">
+					<p class="panier_order">Total :
+					</p>
+					<p class="panier_order_total">{{ total }}
+						€</p>
+				</div>
+					<button class="paiement_btn">Paiement</button>
+					<p class="polo">Vos données personnelles seront utilisées pour traiter votre commande, pour vous aider à utiliser ce site web et pour d'autres raisons décrites dans notre politique de confidentialité.</p>
+			</div>
+		</section>
+	</main>
 {% endblock %}

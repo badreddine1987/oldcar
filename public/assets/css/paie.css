@@ -1,0 +1,105 @@
+.form_payment{
+    width: 100%;
+    max-width: 1200px;
+    min-height: 200px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.payment_head{
+    width: 80%;
+    background: var(--main-color-5);
+    color: var(--main-color-4);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.payment_card{
+    width: 50%;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.form_payment_card,
+.form_payment_adress{
+    width: 50%;
+    min-width: 300px;
+    min-height: 300px;
+    /* background: #fff5e1; */
+}
+
+.form-group{
+    width: 100%;
+    padding: 5px 20px;
+    margin: 0 auto;
+}
+.form-group input{
+    width: 100%;
+    margin: 5px auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #16161657;
+    
+}
+
+.form_payment_card{
+    border: 1px solid #16161630;
+}
+
+
+.order_div_product{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    
+}
+
+.panier_order{
+    width: 60%;
+    padding: 10px;
+}
+
+.panier_order_total{
+    width: 40%;
+    padding: 10px;
+    text-align: right;
+}
+
+.payment_card h2{
+    text-align: center !important;
+    margin: 5px 0;
+}
+
+.uil-times{
+    color: var(--main-color-1);
+}
+
+.hr_order{
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    height: 2px;
+    background: #1616162c;
+}
+
+.polo{
+    width: 100%;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.paiement_btn{
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--main-color-1);
+    color: var(--main-color-2);
+    font-weight: 700;
+    text-transform: uppercase;
+}

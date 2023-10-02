@@ -90,6 +90,11 @@
 .path-shop{
     font-size: 2rem;
 }
+.path-shop span{
+    display: none;
+}
+
+
 /* ########## */
 
 
@@ -117,6 +122,11 @@
     }
 
     .nav_content.active{
-        height: 250px;
+        height: 280px;
+    }
+
+    .path-shop span{
+        display: inline-block;
+        font-size: 1.3rem;
     }
 }

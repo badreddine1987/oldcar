@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@700;900&display=swap');
 /* ################# */
+@import './paie.css';
 @import './dash.css';
 @import './login.css';
 @import './product.css';
